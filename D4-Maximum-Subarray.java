@@ -5,7 +5,11 @@ class D4_Max_Subarray {
         int best = nums[0];
         
         for (int i = 0; i < nums.length; i++) {
+            // local max goes up and down
+            // this asks: what's the best i can do ending here?
             currentSum = Math.max(nums[i], currentSum + nums[i]);
+            // global max never decreases
+            // this asks: what's the best i've ever done?
             best = Math.max(best, currentSum);
         }
         return best;
